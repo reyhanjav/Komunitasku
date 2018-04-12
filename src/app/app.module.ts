@@ -25,6 +25,9 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../services/auth.service';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD1VS3xLMSqaqn4Wgeqh2CSqyAq2xRBWQA",
@@ -35,8 +38,7 @@ export const firebaseConfig = {
   messagingSenderId: "1016567746072"
 };
 
-import { NgxQRCodeModule } from 'ngx-qrcode2';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 
 
 @NgModule({
@@ -57,14 +59,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     HttpModule,
     NgxErrorsModule,
     SuperTabsModule.forRoot(),
-<<<<<<< HEAD
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    IonicModule.forRoot(MyApp)
-=======
     IonicModule.forRoot(MyApp),
     NgxQRCodeModule
->>>>>>> 0ee5915231dc871b62efcbae632e65d3eece0427
+
     
   ],
   bootstrap: [IonicApp],
