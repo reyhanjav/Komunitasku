@@ -1,7 +1,14 @@
+
+import  {HttpModule } from '@angular/http';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { DiscussionPage } from '../pages/discussion/discussion';
 import { GalleryPage } from '../pages/gallery/gallery';
@@ -17,6 +24,16 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthService } from '../services/auth.service';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyD1VS3xLMSqaqn4Wgeqh2CSqyAq2xRBWQA",
+  authDomain: "komunitasku-af3ca.firebaseapp.com",
+  databaseURL: "https://komunitasku-af3ca.firebaseio.com",
+  projectId: "komunitasku-af3ca",
+  storageBucket: "komunitasku-af3ca.appspot.com",
+  messagingSenderId: "1016567746072"
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +50,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    NgxErrorsModule,
     SuperTabsModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp)
     
   ],
@@ -52,6 +73,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     StatusBar,
+    AngularFireAuth,
+    AuthService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

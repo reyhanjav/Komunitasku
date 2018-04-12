@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {NavController, NavParams } from 'ionic-angular';
 import { IntroducePage } from '../introduce/introduce';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * Generated class for the SignupPage page.
@@ -14,8 +16,15 @@ import { IntroducePage } from '../introduce/introduce';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  signupError: string;
+  form: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(fb: FormBuilder, private navCtrl: NavController, private auth: AuthService, public navParams: NavParams)
+ {
+		this.form = fb.group({
+			email: ['', Validators.compose([Validators.required, Validators.email])],
+			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+		});
   }
 
   ionViewDidLoad() {
@@ -23,8 +32,16 @@ export class SignupPage {
   }
 
   signup(){
-    //Api connections
-    this.navCtrl.push(IntroducePage);
+    let data = this.form.value;
+    let credentials = {
+      email: data.email,
+      password: data.password
+    };
+    this.auth.signUp(credentials).then(
+      () => this.navCtrl.push(IntroducePage),
+      error => this.signupError = error.message
+    );
+    
   }
 
 }
