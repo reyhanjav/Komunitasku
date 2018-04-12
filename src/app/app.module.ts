@@ -35,6 +35,10 @@ export const firebaseConfig = {
   messagingSenderId: "1016567746072"
 };
 
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -53,9 +57,14 @@ export const firebaseConfig = {
     HttpModule,
     NgxErrorsModule,
     SuperTabsModule.forRoot(),
+<<<<<<< HEAD
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp)
+=======
+    IonicModule.forRoot(MyApp),
+    NgxQRCodeModule
+>>>>>>> 0ee5915231dc871b62efcbae632e65d3eece0427
     
   ],
   bootstrap: [IonicApp],
@@ -76,7 +85,8 @@ export const firebaseConfig = {
     AngularFireAuth,
     AuthService,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BarcodeScanner
   ]
 })
 export class AppModule {}
