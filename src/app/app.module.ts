@@ -11,6 +11,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { IntroducePage } from '../pages/introduce/introduce';
 
+import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -27,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     ProfilePage,
     IntroducePage,
+    WelcomePage,
     TabsPage
   ],
   imports: [
@@ -45,6 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     ProfilePage,
     IntroducePage,
+    WelcomePage,
     TabsPage
   ],
   providers: [
