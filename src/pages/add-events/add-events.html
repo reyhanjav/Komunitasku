@@ -1,0 +1,29 @@
+<!--
+  Generated template for the AddEventsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AddEvents</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+  <ion-item>
+    <ion-label>Title</ion-label>
+    <ion-input [(ngModel)]="event.title" placeholder="title"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label>Content</ion-label>
+    <ion-textarea [(ngModel)]="event.content" placeholder="Set your content here"></ion-textarea>
+  </ion-item>
+ 
+  <button ion-button block clear (click)="addEvent(event)">Add</button>
+</ion-content>

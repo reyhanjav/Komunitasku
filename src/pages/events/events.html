@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Events</ion-title>
+<ion-buttons end>
+  <button (click)="addEvent(event)" ion-button>
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-buttons>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  
+      <ion-item-sliding *ngFor="let event of eventlist | async" >
+  
+        <button ion-item 
+        detail-push navPush="EditEventsPage" [navParams]="{event:event}">
+          <h3>{{event.title}}</h3>
+          <p>
+            {{event.content}}
+          </p>
+        </button>
+  
+        <ion-item-options side="left">
+          <button ion-button (click)="favorite(item)">Favorite</button>
+          <button ion-button color="danger" (click)="share(item)">Share</button>
+        </ion-item-options>
+    
+        <ion-item-options side="right">
+          <button ion-button (click)="unread(item)">Unread</button>
+        </ion-item-options>
+  
+      </ion-item-sliding>
+  
+  
+  </ion-list>
+
+ 
+<button ion-button start clear big color="buttons" (click)="goToIntroduce(introduce)">Introduce</button>
+</ion-content>
+
+
+

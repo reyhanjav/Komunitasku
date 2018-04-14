@@ -12,7 +12,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { DiscussionPage } from '../pages/discussion/discussion';
 import { GalleryPage } from '../pages/gallery/gallery';
-import { CoursePage } from '../pages/course/course';
+
+
+import { EventsPage } from '../pages/events/events';
+import { AddEventsPage } from '../pages/add-events/add-events';
+import { eventListService } from '../services/eventList.service';
+
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
@@ -46,7 +51,9 @@ export const firebaseConfig = {
     MyApp,
     DiscussionPage,
     GalleryPage,
-    CoursePage,
+    EventsPage,
+    AddEventsPage,
+
     LoginPage,
     SignupPage,
     ProfilePage,
@@ -71,7 +78,10 @@ export const firebaseConfig = {
     MyApp,
     DiscussionPage,
     GalleryPage,
-    CoursePage,
+    EventsPage,
+    AddEventsPage,
+
+
     LoginPage,
     SignupPage,
     ProfilePage,
@@ -81,6 +91,7 @@ export const firebaseConfig = {
   ],
   providers: [
     StatusBar,
+    eventListService,
     AngularFireAuth,
     AuthService,
     SplashScreen,
