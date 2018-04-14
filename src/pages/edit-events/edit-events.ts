@@ -24,13 +24,13 @@ export class EditEventsPage {
 
   updateEvent(event: eventList) {
     this.elService.updateEvent(event).then(() => {
-      this.navCtrl.setRoot('EventsPage');
+      this.navCtrl.setRoot(EventsPage);
     })
   }
  
   removeEvent(event: eventList) {
     this.elService.removeEvent(event).then(() => {
-      this.navCtrl.setRoot('EventsPage');
+      this.navCtrl.setRoot(EventsPage);
     })
   }
 
