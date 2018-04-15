@@ -3,6 +3,12 @@
     <ion-title>
       Profile
     </ion-title>
+
+    <ion-buttons end>
+      <button (click)="createCode()" ion-button>
+        <ion-icon name="barcode"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
  
@@ -11,8 +17,6 @@
     <ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="qrData">
     </ion-input>
   </ion-item>
-  <button ion-button full icon-left (click)="createCode()"><ion-icon name="barcode"></ion-icon>Create Code</button>
-  <button ion-button full icon-left (click)="scanCode()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
  
   <ion-card *ngIf="createdCode">
     <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
@@ -27,4 +31,8 @@
     </ion-card-content>
   </ion-card>
   
+  <ion-fab bottom right #fab>
+    <button ion-fab (click)="scanCode()"><ion-icon name="qr-scanner"></ion-icon></button>
+  </ion-fab>
+
 </ion-content>
