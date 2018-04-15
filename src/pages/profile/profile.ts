@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams ,ModalController} from 'ionic-angular';
+import { AlertController, NavController, NavParams ,ModalController} from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { WelcomePage } from '../welcome/welcome';
 
@@ -9,7 +9,7 @@ import { WelcomePage } from '../welcome/welcome';
 })
 export class ProfilePage {
   
-  constructor(private navCtrl: NavController,private modal: ModalController, private auth: AuthService) { }
+  constructor(private navCtrl: NavController,private modal: ModalController,private alertCtrl: AlertController, private auth: AuthService) { }
 
   openModal(){
     const myModal = this.modal.create('ModalQRcodePage');
@@ -19,6 +19,29 @@ export class ProfilePage {
   logout() {
 		this.auth.signOut();
 		this.navCtrl.setRoot(WelcomePage);
-	}
+  }
+  
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm Logout',
+      message: 'Once you log out, your data will be erased',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Log Out',
+          handler: () => {
+           this.logout();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 }
