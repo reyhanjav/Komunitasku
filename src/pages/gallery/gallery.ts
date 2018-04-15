@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,NgZone  } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { AuthService } from '../../services/auth.service';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -8,8 +10,24 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class GalleryPage {
 
-  constructor(public navCtrl: NavController) {
+  avatar: string;
+  displayName: string;
 
+  constructor(public navCtrl: NavController,public zone: NgZone, private profile: AuthService) {
+
+  }
+
+  ionViewWillEnter() {
+    this.loaduserdetails();
+  }
+
+  loaduserdetails() {
+    this.profile.getuserdetails().then((res: any) => {
+      this.displayName = res.displayName;
+      this.zone.run(() => {
+        this.avatar = res.photoURL;
+      })
+    })
   }
 
 }
