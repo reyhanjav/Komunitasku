@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { eventList } from '../../model/eventList';
 import { eventListService } from '../../services/eventList.service'
-import { EventsPage } from '../events/events';
 
 @Component({
   selector: 'page-add-events',
@@ -25,7 +24,7 @@ export class AddEventsPage {
 
   addEvent(event: eventList){
     this.elService.addEvent(event).then(ref => {
-      this.navCtrl.setRoot(EventsPage);
+      this.navCtrl.setRoot('EventsPage');
     })
   }
 

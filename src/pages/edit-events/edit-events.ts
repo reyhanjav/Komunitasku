@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { eventList } from '../../model/eventList';
 import { eventListService } from '../../services/eventList.service';
-import { EventsPage } from '../events/events'; 
 
 @IonicPage()
 @Component({
@@ -24,13 +23,13 @@ export class EditEventsPage {
 
   updateEvent(event: eventList) {
     this.elService.updateEvent(event).then(() => {
-      this.navCtrl.setRoot(EventsPage);
+      this.navCtrl.setRoot('EventsPage');
     })
   }
  
   removeEvent(event: eventList) {
     this.elService.removeEvent(event).then(() => {
-      this.navCtrl.setRoot(EventsPage);
+      this.navCtrl.setRoot('EventsPage');
     })
   }
 

@@ -5,22 +5,22 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
+
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { DiscussionPage } from '../pages/discussion/discussion';
-import { GalleryPage } from '../pages/gallery/gallery';
 
-
-import { EventsPage } from '../pages/events/events';
 import { AddEventsPage } from '../pages/add-events/add-events';
 import { eventListService } from '../services/eventList.service';
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { ProfilePage } from '../pages/profile/profile';
 import { IntroducePage } from '../pages/introduce/introduce';
 
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -32,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../services/auth.service';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 
 
 export const firebaseConfig = {
@@ -49,14 +50,10 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    DiscussionPage,
-    GalleryPage,
-    EventsPage,
     AddEventsPage,
 
     LoginPage,
     SignupPage,
-    ProfilePage,
     IntroducePage,
     WelcomePage,
     TabsPage
@@ -76,15 +73,11 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    DiscussionPage,
-    GalleryPage,
-    EventsPage,
     AddEventsPage,
 
 
     LoginPage,
     SignupPage,
-    ProfilePage,
     IntroducePage,
     WelcomePage,
     TabsPage
@@ -94,9 +87,15 @@ export const firebaseConfig = {
     eventListService,
     AngularFireAuth,
     AuthService,
+    ImghandlerProvider,
     SplashScreen,
+    File,
+    FilePath,
+    FileChooser,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BarcodeScanner
+    BarcodeScanner,
+    ImghandlerProvider
   ]
 })
 export class AppModule {}

@@ -23,7 +23,8 @@ export class SignupPage {
  {
 		this.form = fb.group({
 			email: ['', Validators.compose([Validators.required, Validators.email])],
-			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      displayName: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 		});
   }
 
@@ -33,11 +34,13 @@ export class SignupPage {
 
   signup(){
     let data = this.form.value;
-    let credentials = {
+    let newuser = {
+      displayName: data.displayName,
       email: data.email,
       password: data.password
+      
     };
-    this.auth.signUp(credentials).then(
+    this.auth.signUp(newuser).then(
       () => this.navCtrl.push(IntroducePage),
       error => this.signupError = error.message
     );

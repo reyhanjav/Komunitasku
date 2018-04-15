@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { eventList } from '../../model/eventList';
 import { eventListService } from '../../services/eventList.service';
@@ -7,6 +7,7 @@ import { IntroducePage } from '../introduce/introduce';
 import { AddEventsPage } from '../add-events/add-events';
 import { EditEventsPage } from '../edit-events/edit-events';
 
+@IonicPage()
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html'

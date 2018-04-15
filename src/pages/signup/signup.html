@@ -16,6 +16,14 @@
 <ion-content padding>
     <form (ngSubmit)="signup()" [formGroup]="form">
         <ion-list inset>
+
+            <ion-item>
+                <ion-input type="text" placeholder="Real Name" formControlName="displayName"></ion-input>
+              </ion-item>
+    
+              <div ngxErrors="displayName" #displayNameErrors="ngxErrors">
+                <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
+              </div>
     
           <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
             <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
@@ -32,6 +40,8 @@
           <div ngxErrors="password" #passwordErrors="ngxErrors">
             <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
           </div>
+
+          
         </ion-list>
     
         <div padding-horizontal>

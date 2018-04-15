@@ -14,11 +14,10 @@
     
     <ion-content padding>
       <div padding-top text-center >
-        <div class="profilePict">
-          <img src="assets/icon/user.png" *ngIf="!profilePict">
-          <img [src]="profilePict" *ngIf="profilePict">
+        <div class="profilePict" (click)="editimage()">
+            <img src="{{avatar}}">
         </div>
-          <h2>Jhon Doe</h2>
+          <h2 (click)="editname()">{{displayName}}</h2>
           <p>Mastah</p>
           <button ion-button outline color="primary" (click)="editProfile()" >
           Edit profile
