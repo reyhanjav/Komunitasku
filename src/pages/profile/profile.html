@@ -28,6 +28,10 @@
        </div>
     </ion-content>
   
-    <ion-fab right bottom>
-          <button ion-fab (click)="openModal()"><ion-icon name="add"></ion-icon></button>
+    <ion-fab left bottom>
+      <button ion-fab color="secondary"><ion-icon name="arrow-dropright"></ion-icon></button>
+      <ion-fab-list side="right">
+        <button ion-fab (click)="openModal()"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+        <button ion-fab (click)="openReward()"><ion-icon name="basket"></ion-icon></button>
+      </ion-fab-list>
     </ion-fab>

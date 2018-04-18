@@ -22,6 +22,10 @@ export class ProfilePage {
     myModal.present();
   }
 
+  openReward() {
+    this.navCtrl.push('RewardPage');
+  }
+
   logout() {
 		this.profile.signOut();
 		this.navCtrl.setRoot(WelcomePage);
