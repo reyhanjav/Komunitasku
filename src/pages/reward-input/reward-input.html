@@ -2,6 +2,9 @@
 
   <ion-navbar>
     <ion-title>Input Reward</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">close</button>  
+    </ion-buttons>>
   </ion-navbar>
 
 </ion-header>
@@ -21,7 +24,14 @@
   </ion-item>
 
 </ion-list>
-
+<ion-item>
+  <p>{{imageURI}}</p>
+  <button ion-button color="secondary" (click)="getImage()">Get Image</button>
+</ion-item>
+<ion-item>
+  <h4>Image Preview</h4>
+  <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+</ion-item>
 <div padding>
   <button ion-button color="primary" block>Ok</button>
 </div>

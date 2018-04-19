@@ -34,6 +34,9 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD1VS3xLMSqaqn4Wgeqh2CSqyAq2xRBWQA",
@@ -95,7 +98,9 @@ export const firebaseConfig = {
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
-    ImghandlerProvider
+    ImghandlerProvider,
+    FileTransfer,
+  FileTransferObject,
   ]
 })
 export class AppModule {}

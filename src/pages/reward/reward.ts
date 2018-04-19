@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 
 
 /**
@@ -16,13 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RewardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private modal: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RewardPage');
   }
-  openRewardInput() {
-  this.navCtrl.push('RewardInputPage');
+  openRewardInput(){
+  let test = this.modal.create('RewardInputPage');
+  test.present();
+  //this.navCtrl.push('RewardInputPage');
   }
 }
