@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the RewardPage page.
  *
@@ -21,5 +22,7 @@ export class RewardPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RewardPage');
   }
-
+  openRewardInput() {
+  this.navCtrl.push('RewardInputPage');
+  }
 }
