@@ -26,7 +26,7 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
     });
 
     this.auth.afAuth.authState

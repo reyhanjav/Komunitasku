@@ -7,13 +7,116 @@ page-gallery {
                 margin-bottom: 25px;
                 position: relative;
             }
+
+            ion-avatar{
+                padding-left: 0.6vh;
+            }
      
             ion-card:last-of-type {
                 margin-bottom: 0 !important;
+            }
+            ion-grid{
+                padding: 0px;
             }
      
             ion-item {
                 background-color: #fff;
             }
-     
+
+            .card, .list-inset {
+               
+                overflow: hidden;
+                margin: 10px 0px 0px;
+                background-color: #fff; }
+            .grid .col{
+                padding:0px;
+            }
+              .card {
+                width: 100%;
+                padding-left: -10px;
+                padding-right: -10px;
+                padding-top: 1px;
+                height: 480px;
+                padding-bottom: 1px;
+                box-shadow: 0 10px 0px rgba(134, 134, 134, 0.2); }
+                .card .item {
+                  border-left: 0;
+                  border-right: 0; }
+                  .card img {
+                    max-width: 400px;
+                    max-height: 250px;
+                    margin: 0px; }
+
+                    #img-content {
+                    padding-left: 3vh;
+                    padding-right: 3vh;
+                    max-width: 400px;
+                    max-height: 250px;
+                    margin: 0px; }
+                    .card-content {
+                        
+                        padding-top: 1vh;
+                        padding-left: 3vh;
+                        padding-right: 3vh;}
+
+                    .card-content p {
+                        font-size: 10pt;
+                        font-weight: 400; }
+                  .card-title {
+                    font-size: 14pt;
+                    text-align: left;
+                    padding-left: 0px;
+                    font-weight: 690; }
+                .card .item:first-child {
+                  border-top: 0; }
+                .card .item:last-child {
+                  border-bottom: 0; }
+              
+              .padding .card, .padding .list-inset {
+                margin-left: 0;
+                margin-right: 0; }
+              
+              .card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px; }
+                .card .item:first-child .item-content, .list-inset .item:first-child .item-content, .padding > .list .item:first-child .item-content {
+                  border-top-left-radius: 2px;
+                  border-top-right-radius: 2px; }
+              .card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+                border-bottom-right-radius: 2px;
+                border-bottom-left-radius: 2px; }
+                .card .item:last-child .item-content, .list-inset .item:last-child .item-content, .padding > .list .item:last-child .item-content {
+                  border-bottom-right-radius: 2px;
+                  border-bottom-left-radius: 2px; }
+              
+              .card .item:last-child, .list-inset .item:last-child {
+                margin-bottom: -1px; }
+              
+              .card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+                margin-right: 0;
+                margin-left: 0; }
+                .card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+                  padding-right: 44px; }
+              
+              .padding-left > .list .item {
+                margin-left: 0; }
+              
+              .padding-right > .list .item {
+                margin-right: 0; }
+        
+                h3{
+                    text-align: left;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                .button{
+                    font-weight: 700;
+                    float: left;
+                    padding-left: 26px;
+                }
+                .p{
+                    font-size: 8pt;
+                    font-weight: 500;
+                }
+
 }

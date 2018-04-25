@@ -9,12 +9,12 @@ import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
-
-
+import { UserService } from '../services/user.service';
+import { IonicImageLoader } from 'ionic-image-loader';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { AddEventsPage } from '../pages/add-events/add-events';
 import { eventListService } from '../services/eventList.service';
@@ -63,8 +63,10 @@ export const firebaseConfig = {
     HttpModule,
     NgxErrorsModule,
     SuperTabsModule.forRoot(),
+    IonicImageLoader.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFirestoreModule.enablePersistence(),
     IonicModule.forRoot(MyApp),
     NgxQRCodeModule
 
@@ -84,6 +86,7 @@ export const firebaseConfig = {
   ],
   providers: [
     StatusBar,
+    UserService,
     eventListService,
     AngularFireAuth,
     AuthService,

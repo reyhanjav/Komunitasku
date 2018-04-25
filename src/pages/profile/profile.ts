@@ -3,7 +3,6 @@ import { IonicPage,AlertController, NavController, NavParams ,ModalController} f
 import { AuthService } from '../../services/auth.service';
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { WelcomePage } from '../welcome/welcome';
-import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -27,11 +26,7 @@ export class ProfilePage {
 		this.navCtrl.setRoot(WelcomePage);
   }
 
-  ionViewWillEnter() {
-    this.loaduserdetails();
-  }
-
-  loaduserdetails() {
+  ionViewDidLoad() {
     this.profile.getuserdetails().then((res: any) => {
       this.displayName = res.displayName;
       this.zone.run(() => {
@@ -39,6 +34,8 @@ export class ProfilePage {
       })
     })
   }
+
+ 
 
   editimage() {
     let statusalert = this.alertCtrl.create({

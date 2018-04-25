@@ -23,7 +23,8 @@ export class EventsPage {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
         }))
-      });
+      })
+      .map(changes => changes.reverse());
   }
 
   goToIntroduce(introduce: any) {

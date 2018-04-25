@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { eventList } from '../../model/eventList';
 import { eventListService } from '../../services/eventList.service'
@@ -14,6 +14,7 @@ export class AddEventsPage {
     content: ''
   };
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
       private elService: eventListService) {
   }
@@ -26,6 +27,14 @@ export class AddEventsPage {
     this.elService.addEvent(event).then(ref => {
       this.navCtrl.setRoot('EventsPage');
     })
+  }
+
+  @ViewChild('myInput') myInput: ElementRef;
+  resize() {
+      var element = this.myInput['_elementRef'].nativeElement.getElementsByClassName("text-input")[0];
+      var scrollHeight = element.scrollHeight;
+      element.style.height = scrollHeight + 'px';
+      this.myInput['_elementRef'].nativeElement.style.height = (scrollHeight + 16) + 'px';
   }
 
 }

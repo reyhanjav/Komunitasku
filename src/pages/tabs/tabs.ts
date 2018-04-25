@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { NavController} from 'ionic-angular';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -10,7 +10,11 @@ export class TabsPage {
   tab3Root = 'DiscussionPage';
   tab4Root = 'GalleryPage';
 
-  constructor() {
+  constructor( public navCtrl: NavController) {
 
+  }
+
+  chat() {
+    this.navCtrl.push('ProfilePage');
   }
 }

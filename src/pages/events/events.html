@@ -1,22 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Events</ion-title>
-<ion-buttons end>
-  <button (click)="addEvent(event)" ion-button>
-    <ion-icon name="add"></ion-icon>
-  </button>
-</ion-buttons>
-</ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-  
+  <ion-item-group>
+    <ion-item-divider sticky>
+      <ion-label>
+        9 April 2018
+      </ion-label>
+    </ion-item-divider>
       <ion-item-sliding *ngFor="let event of eventlist | async" >
-  
-        <button ion-item 
-        detail-push navPush="EditEventsPage" [navParams]="{event:event}">
-          <h3>{{event.title}}</h3>
+        
+        <button ion-item detail-push navPush="DisplayEventsPage" [navParams]="{event:event}">
+          <h2>{{event.title}}</h2>
           <p>
             {{event.content}}
           </p>
@@ -28,10 +25,12 @@
         </ion-item-options>
     
         <ion-item-options side="right">
-          <button ion-button (click)="unread(item)">Unread</button>
+          <button ion-button detail-push navPush="EditEventsPage" [navParams]="{event:event}">Edit</button>
         </ion-item-options>
   
       </ion-item-sliding>
+
+    </ion-item-group>
   
   
   </ion-list>
@@ -40,5 +39,7 @@
 <button ion-button start clear big color="buttons" (click)="goToIntroduce(introduce)">Introduce</button>
 </ion-content>
 
-
+<ion-fab right bottom>
+    <button ion-fab (click)="addEvent(event)"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
 

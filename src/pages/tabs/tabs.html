@@ -1,6 +1,7 @@
-<ion-tabs tabsPlacement="top" selectedIndex="1">
-  <ion-tab [root]="tab1Root" tabTitle="Profile" tabsHideOnSubPages="true"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Events"tabsHideOnSubPages="true"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Discussion" tabsHideOnSubPages="true"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Gallery" tabsHideOnSubPages="true"></ion-tab>
+<ion-tabs tabsPlacement="top" selectedIndex="1" no-border color="primary" tabsHighlight = "true" >
+  <ion-tab [root]="tab1Root" tabIcon="person" tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Events"  tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Forum"  tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Gallery"  tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab (ionSelect)="chat()" tabIcon="search" tabsHideOnSubPages="true"></ion-tab>
 </ion-tabs>

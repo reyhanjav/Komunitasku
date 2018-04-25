@@ -1,21 +1,38 @@
 <ion-header>
-  
-      <ion-navbar>
-        <ion-title>Profile</ion-title>
-        <ion-buttons end>
-          <button ion-button icon-only (click)="presentPopover($event)">
-            <ion-icon name="more"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-navbar>
     
     </ion-header>
     
     
     <ion-content padding>
+        <ion-list no-lines>
+          <ion-grid><ion-row>
+            <ion-col>
+            <ion-item>
+              <ion-avatar item-left>
+                <img-loader src="{{avatar}}" useImg spinner></img-loader>
+              </ion-avatar>
+              <h2 (click)="editname()">{{displayName}}</h2>
+              <p>Senior Member</p>
+            </ion-item> 
+          </ion-col></ion-row>
+          <ion-row no-lines>
+          <ion-col>
+            <ion-item> no-lines
+              <ion-label>Posts <span>20</span></ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label>Favorite <span>20</span></ion-label>
+                  </ion-item>
+                </ion-col></ion-row>
+
+                </ion-grid>
+          </ion-list>
+
       <div padding-top text-center >
         <div class="profilePict" (click)="editimage()">
-            <img src="{{avatar}}">
+            <img-loader src="{{avatar}}" useImg spinner></img-loader>
         </div>
           <h2 (click)="editname()">{{displayName}}</h2>
           <p>Mastah</p>

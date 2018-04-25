@@ -19,6 +19,8 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="StatusBarBackgroundColor" value="#f73267" />
+    <preference name="StatusBarStyle" value="blackopaque" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -87,4 +89,8 @@
     <plugin name="cordova-plugin-filechooser" spec="^1.0.1" />
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-camera" spec="^4.0.2" />
+    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
+    <allow-navigation href="http://192.168.1.6:8100" />
+    <plugin name="cordova-plugin-headercolor" spec="^1.0.0" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
 </widget>

@@ -18,7 +18,7 @@
         <ion-list inset>
 
             <ion-item>
-                <ion-input type="text" placeholder="Real Name" formControlName="displayName"></ion-input>
+                <ion-input type="text" placeholder="Real Name" formControlName="displayName" clearInput></ion-input>
               </ion-item>
     
               <div ngxErrors="displayName" #displayNameErrors="ngxErrors">
@@ -26,7 +26,7 @@
               </div>
     
           <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
-            <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+            <ion-input type="text" placeholder="Email" formControlName="email" clearInput></ion-input>
           </ion-item>
     
           <div ngxErrors="email" #emailErrors="ngxErrors">
@@ -34,7 +34,7 @@
           </div>
     
           <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
-            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+            <ion-input type="password" placeholder="Password" formControlName="password" clearInput></ion-input>
           </ion-item>
     
           <div ngxErrors="password" #passwordErrors="ngxErrors">

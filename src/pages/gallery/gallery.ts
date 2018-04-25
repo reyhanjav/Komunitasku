@@ -30,4 +30,16 @@ export class GalleryPage {
     })
   }
 
+  addGallery(gallery: any) {
+    this.navCtrl.push('AddGalleryPage');
+  }
+
+  editGallery(gallery: any) {
+    this.navCtrl.push('EditGalleryPage');
+  }
+
+  displayGallery(gallery: any) {
+    this.navCtrl.push('DisplayGalleryPage');
+  }
+
 }
