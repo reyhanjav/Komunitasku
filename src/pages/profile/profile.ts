@@ -3,6 +3,7 @@ import { IonicPage,AlertController, NavController, NavParams ,ModalController} f
 import { AuthService } from '../../services/auth.service';
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { WelcomePage } from '../welcome/welcome';
+import { ImageLoader } from 'ionic-image-loader';
 
 @IonicPage()
 @Component({
@@ -14,7 +15,7 @@ export class ProfilePage {
   avatar: string;
   displayName: string;
 
-  constructor(private navCtrl: NavController,public zone: NgZone,private modal: ModalController,private alertCtrl: AlertController,public imghandler: ImghandlerProvider, private profile: AuthService) { }
+  constructor(private imageLoader: ImageLoader,private navCtrl: NavController,public zone: NgZone,private modal: ModalController,private alertCtrl: AlertController,public imghandler: ImghandlerProvider, private profile: AuthService) { }
 
   openModal(){
     const myModal = this.modal.create('ModalQRcodePage');
@@ -33,6 +34,15 @@ export class ProfilePage {
         this.avatar = res.photoURL;
       })
     })
+  }
+
+  clearCache(refresher) {
+    this.imageLoader.clearCache();
+    refresher.complete();
+  }
+ 
+  onImageLoad(event) {
+    console.log('image ready: ', event);
   }
 
  

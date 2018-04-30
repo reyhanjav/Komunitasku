@@ -18,8 +18,9 @@ export class DisplayDiscussionPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DisplayDiscussionPage');
+
+  editGallery(gallery: any) {
+    this.navCtrl.push('EditDiscussionPage');
   }
 
 }

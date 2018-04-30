@@ -19,10 +19,6 @@ export class AddEventsPage {
       private elService: eventListService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddEventsPage');
-  }
-
   addEvent(event: eventList){
     this.elService.addEvent(event).then(ref => {
       this.navCtrl.setRoot('EventsPage');

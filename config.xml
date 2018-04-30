@@ -12,6 +12,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="ScrollEnabled" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
@@ -93,4 +94,5 @@
     <allow-navigation href="http://192.168.1.6:8100" />
     <plugin name="cordova-plugin-headercolor" spec="^1.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
 </widget>

@@ -9,7 +9,7 @@
             <ion-col>
             <ion-item>
               <ion-avatar item-left>
-                <img-loader src="{{avatar}}" useImg spinner></img-loader>
+                <img-loader src="{{avatar}}" useImg spinner (load)="onImageLoad($event)"></img-loader>
               </ion-avatar>
               <h2 (click)="editname()">{{displayName}}</h2>
               <p>Senior Member</p>
@@ -32,7 +32,7 @@
 
       <div padding-top text-center >
         <div class="profilePict" (click)="editimage()">
-            <img-loader src="{{avatar}}" useImg spinner></img-loader>
+            <img-loader src="{{avatar}}" useImg spinner (load)="onImageLoad($event)"></img-loader>
         </div>
           <h2 (click)="editname()">{{displayName}}</h2>
           <p>Mastah</p>

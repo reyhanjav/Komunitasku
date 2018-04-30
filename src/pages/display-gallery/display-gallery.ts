@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Post } from '../../providers/gallery-post/gallery-post';
 
-/**
- * Generated class for the DisplayGalleryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +9,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'display-gallery.html',
 })
 export class DisplayGalleryPage {
-
+  post: Post;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DisplayGalleryPage');
+    this.post = navParams.get('post');
   }
 
 }

@@ -1,5 +1,5 @@
 
-import  {HttpModule } from '@angular/http';
+import  {Http,HttpModule } from '@angular/http';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +33,8 @@ import { AuthService } from '../services/auth.service';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImghandlerProvider } from '../providers/imghandler/imghandler';
-
+import { GalleryPostProvider } from '../providers/gallery-post/gallery-post';
+import { WpApiModule,WpApiLoader,WpApiStaticLoader } from 'wp-api-angular';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD1VS3xLMSqaqn4Wgeqh2CSqyAq2xRBWQA",
@@ -45,7 +46,9 @@ export const firebaseConfig = {
 };
 
 
-
+export function WpApiLoaderFactory(http) {
+  return new WpApiStaticLoader(http, 'http://himalkom.cs.ipb.ac.id/wp-json/');
+}
 
 @NgModule({
   declarations: [
@@ -61,6 +64,11 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     HttpModule,
+    WpApiModule.forRoot({
+  provide: WpApiLoader,
+  useFactory: (WpApiLoaderFactory),
+  deps: [Http]
+}),
     NgxErrorsModule,
     SuperTabsModule.forRoot(),
     IonicImageLoader.forRoot(),
@@ -98,7 +106,8 @@ export const firebaseConfig = {
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
-    ImghandlerProvider
+    ImghandlerProvider,
+    GalleryPostProvider
   ]
 })
 export class AppModule {}

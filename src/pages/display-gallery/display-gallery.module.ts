@@ -9,5 +9,8 @@ import { DisplayGalleryPage } from './display-gallery';
   imports: [
     IonicPageModule.forChild(DisplayGalleryPage),
   ],
+  exports: [
+    DisplayGalleryPage,
+  ],
 })
 export class DisplayGalleryPageModule {}

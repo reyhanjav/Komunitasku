@@ -36,23 +36,18 @@ page-gallery {
                 padding-left: -10px;
                 padding-right: -10px;
                 padding-top: 1px;
-                height: 480px;
+                max-height: 550px;
                 padding-bottom: 1px;
                 box-shadow: 0 10px 0px rgba(134, 134, 134, 0.2); }
                 .card .item {
                   border-left: 0;
                   border-right: 0; }
                   .card img {
+                    object-fit: cover;
                     max-width: 400px;
                     max-height: 250px;
                     margin: 0px; }
 
-                    #img-content {
-                    padding-left: 3vh;
-                    padding-right: 3vh;
-                    max-width: 400px;
-                    max-height: 250px;
-                    margin: 0px; }
                     .card-content {
                         
                         padding-top: 1vh;

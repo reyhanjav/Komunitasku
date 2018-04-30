@@ -3,84 +3,28 @@
 </ion-header>
 
  <ion-content>
+    <ion-refresher (ionRefresh)="clearCache($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
 
-<ion-card>
+<ion-card *ngFor="let post of posts | async">
 
     <ion-item>
         <ion-avatar item-left>
-          <img src="{{avatar}}" />
+          <img [src]="getUserImage(post.authorId)" />
         </ion-avatar>
-        <h2>{{displayName}}</h2>
-        <p>April 12, 2018</p>
-        <ion-buttons item-right end>
-          <button (click)="editGallery(gallery)" ion-button>
-            Edit
-          </button>
-        </ion-buttons>
+        <h2>{{ getUserName(post.authorId) }}</h2>
+        <p>{{post.date.split('T')[0] | date: 'dd MMMM yyyy'}}</p>
       </ion-item>
 
-  <img id="img-content" src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
+  <img-loader [src]="post.media_url | async"  (click)="displayGallery(post)" useImg spinner (load)="onImageLoad($event)"></img-loader>
 
   <ion-card-content>
-    <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
-    <p>Kumpul komunitas Mixed reality kali ini diadakan di lab multimedia dan dijalankan dengan baik</p>
+    <ion-card-title (click)="displayGallery(post)">{{ post.title }}</ion-card-title>
+    <div [innerHTML]="post.excerpt.split('<a')[0]"></div>
     
   </ion-card-content>
 
 </ion-card>
 
-<ion-card>
-
-  <ion-item>
-      <ion-avatar item-left>
-        <img src="{{avatar}}" />
-      </ion-avatar>
-      <h2>{{displayName}}</h2>
-      <p>April 12, 2018</p>
-      <ion-buttons item-right end>
-        <button (click)="editGallery(gallery)" ion-button>
-          Edit
-        </button>
-      </ion-buttons>
-    </ion-item>
-
-<img id="img-content" src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
-
-<ion-card-content>
-  <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
-  <p>Kumpul komunitas Mixed reality kali ini diadakan di lab multimedia dan dijalankan dengan baik</p>
-  
-</ion-card-content>
-
-</ion-card>
-
-<ion-card>
-
-  <ion-item>
-      <ion-avatar item-left>
-        <img src="{{avatar}}" />
-      </ion-avatar>
-      <h2>{{displayName}}</h2>
-      <p>April 12, 2018</p>
-      <ion-buttons item-right end>
-        <button (click)="editGallery(gallery)" ion-button>
-          Edit
-        </button>
-      </ion-buttons>
-    </ion-item>
-
-<img id="img-content" src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
-
-<ion-card-content>
-  <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
-  <p>Kumpul komunitas Mixed reality kali ini diadakan di lab multimedia dan dijalankan dengan baik</p>
-  
-</ion-card-content>
-
-</ion-card>
-
 </ion-content>
-
-<ion-fab right bottom>
-    <button ion-fab (click)="addGallery(gallery)"><ion-icon name="add"></ion-icon></button>
-</ion-fab>

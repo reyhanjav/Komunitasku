@@ -18,8 +18,5 @@ export class DisplayEventsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DisplayEventsPage');
-  }
 
 }

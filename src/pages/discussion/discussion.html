@@ -4,7 +4,7 @@
     
      <ion-content>
     
-    <ion-card>
+    <ion-card (click)="displayGallery(gallery)">
     
         <ion-item>
             <ion-avatar item-left>
@@ -12,25 +12,21 @@
             </ion-avatar>
             <h2>{{displayName}}</h2>
             <p>April 12, 2018</p>
-            <ion-buttons item-right end>
-              <button (click)="editGallery(gallery)" ion-button>
-                Edit
-              </button>
-            </ion-buttons>
           </ion-item>
     
-      <img src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
-    
       <ion-card-content>
-        <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
-        <p>tempat : Lab multimedia</p>
-        <p>Kumpul komunitas kah?bahas apaa aja ya</p>
-        
+        <ion-card-title >how to edit .dxt file</ion-card-title>
+        <p>bagaimana cara mengedit .dxt file?</p>
+        <ion-row>
+              <ion-note>11h ago</ion-note>
+        </ion-row>
       </ion-card-content>
+
+      
     
     </ion-card>
 
-    <ion-card>
+    <ion-card (click)="displayGallery(gallery)">
     
       <ion-item>
           <ion-avatar item-left>
@@ -38,17 +34,10 @@
           </ion-avatar>
           <h2>{{displayName}}</h2>
           <p>April 12, 2018</p>
-          <ion-buttons item-right end>
-            <button (click)="editGallery(gallery)" ion-button>
-              Edit
-            </button>
-          </ion-buttons>
         </ion-item>
   
-    <img src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
-  
     <ion-card-content>
-      <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
+      <ion-card-title >Kumpul Komunitas Mixed Reality</ion-card-title>
       <p>tempat : Lab multimedia</p>
       <p>Kumpul komunitas kah?bahas apaa aja ya</p>
       
@@ -56,7 +45,7 @@
   
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="displayGallery(gallery)">
     
     <ion-item>
         <ion-avatar item-left>
@@ -64,17 +53,10 @@
         </ion-avatar>
         <h2>{{displayName}}</h2>
         <p>April 12, 2018</p>
-        <ion-buttons item-right end>
-          <button (click)="editGallery(gallery)" ion-button>
-            Edit
-          </button>
-        </ion-buttons>
       </ion-item>
 
-  <img src="https://firebasestorage.googleapis.com/v0/b/komunitasku-af3ca.appspot.com/o/profileimages%2FIMG_20180307_193727.jpg?alt=media&token=237405a0-4f91-4f11-b0fd-071276b4a1c6" (click)="displayGallery(gallery)">
-
   <ion-card-content>
-    <ion-card-title (click)="displayGallery(gallery)">Kumpul Komunitas Mixed Reality</ion-card-title>
+    <ion-card-title>Kumpul Komunitas Mixed Reality</ion-card-title>
     <p>tempat : Lab multimedia</p>
     <p>Kumpul komunitas kah?bahas apaa aja ya</p>
     
